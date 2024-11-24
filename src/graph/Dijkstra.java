@@ -15,6 +15,7 @@ public class Dijkstra {
             map.put(i, new HashMap<>());
 
         }
+
     }
 
     public static void main(String[] args) {
@@ -66,6 +67,7 @@ public class Dijkstra {
             }
         }
     }
+
     private class DijkstraPair {
         int vtx;
         String path;
