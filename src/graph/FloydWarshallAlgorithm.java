@@ -3,16 +3,17 @@ import java.io.*;
 import java.lang.*;
 import java.util.*;
 public class FloydWarshallAlgorithm {
-    final static int INF=99999,V=4;
+    public final static int INF=99999;
+    final static int V=4;
     void floydWarshall(int[][] dist) {
         int i,j,k;
         /*Add all vertices one by one to the set
         of intermediate vertices.
-        --> Before start of an iteration,we have shortest
+        --> Before start of an iteration,we have shortest,
         distances between all pairs of vertices such that the shortest distances consider
         only the vertices in set{0,1,2,...k-1} as intermediate vertices.
         -->After the end of an iteration, vertex no. k is added to the set of intermediate
-        vertices and the set becomes{0,1,2,..k}
+        vertices and the set becomes{0,1,2,.,.k}
         * */
         for(k=0;k<V;k++){
             for(i=0;i<V;i++){
@@ -59,3 +60,13 @@ public class FloydWarshallAlgorithm {
         a.floydWarshall(graph);
     }
 }
+
+
+/*Complexity Analysis of Floyd Warshall Algorithm:
+* 1--> Time Complexity :O(V3), where V is the number of vertices in the vertices
+* int the graphand we run three nested loops each of size V.
+* 2--> Auxiliary Space: O(v^2),to create a 2-D Matrix in order to store the shortest
+* distance for each pair of nodes/
+Note : The Above program only prints the shortest distances.We can modify the Solution
+to print the shortest paths also by storing the predecessor information in a separate 2D
+matrix.*/
